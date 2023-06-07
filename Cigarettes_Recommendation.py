@@ -284,9 +284,9 @@ H"""
     code = """def cig_recommend_model(uid, topn):
     rec_cig_brands = recommend_matrix.iloc[uid].sort_values(ascending=False)
     rec_cig_brands = rec_cig_brands[rec_cig_brands > 0].index
-    recommend_df = pd.DataFrame(columns=cig_moded_df.columns)
+    recommend_df = pd.DataFrame(columns=cig_mode_df.columns)
     for brand in rec_cig_brands:
-        recommend_df = pd.concat([recommend_df, cig_moded_df[cig_moded_df['Brand_Variety'] == brand]])
+        recommend_df = pd.concat([recommend_df, cig_mode_df[cig_mode_df['Brand_Variety'] == brand]])
     return recommend_df[:topn]"""
     st.code(code, language='python')
     st.write("")
