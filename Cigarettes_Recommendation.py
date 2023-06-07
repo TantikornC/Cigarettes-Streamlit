@@ -298,7 +298,7 @@ H"""
             recommend_df = pd.concat([recommend_df, cig_mode_df[cig_mode_df['Brand_Variety'] == brand]])
         return recommend_df[:topn]
     st.write('**:blue[Try for yourself!]**')
-    uid = round(st.number_input('**User id**', step=1))
+    uid = round(st.number_input('**User id**',min_value=0, max_value=recommend_matrix.index[-1], step=1))
     topn = round(st.number_input('**Topn** ', min_value=1, step=1))
     code = "cig_recommend_model({}, {}).reset_index(drop=True)".format(uid, topn)
     st.code(code, language='python')
@@ -384,7 +384,7 @@ new_user_matrix.fillna(value=0, inplace=True)"""
     st.code(code, language='python')
     st.write("")
     st.write("**:blue[Try for yourself!]**")
-    uid = round(st.number_input('**User id** ', step=1))
+    uid = round(st.number_input('**User id** ',min_value=0, max_value=new_user_matrix.index[-1], step=1))
     topn = round(st.number_input('**Topn**  ', min_value=1, step=1))
     code = "cig_recommend_memory({}, {})".format(uid, topn)
     st.code(code, language='python')
