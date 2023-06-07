@@ -7,7 +7,7 @@ from sklearn.decomposition import NMF
 from scipy.spatial.distance import cosine
 
 def main():
-    st.markdown("<h1 style='text-align: center; color: black;'>Cigarettes Recommendation System</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>Cigarettes Recommendation System</h1>", unsafe_allow_html=True)
     st.markdown("#")
     st.markdown("#")
 
