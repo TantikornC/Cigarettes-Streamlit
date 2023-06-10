@@ -241,7 +241,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.01, random
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.01, random_state=0)
     st.markdown("#")
 
-    st.markdown("<h1 style='font-size:20px'>3.1.2) Creating a cross tab matrix between User and Brand_Variety from the training data</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='font-size:20px'>3.1.2) Creating a crosstab matrix between User and Brand_Variety from the training data</h1>", unsafe_allow_html=True)
     st.write("")
     code = """crosstab_matrix = pd.crosstab(y_train, X_train['Brand_Variety'], X_train['Rating'], aggfunc='mean')
 crosstab_matrix.fillna(value=0, inplace=True)
@@ -309,7 +309,7 @@ H"""
 
     st.markdown("<h1 style='font-size:25px'>3.2) Memory-based</h1>", unsafe_allow_html=True)
     st.write("")
-    st.markdown("<h1 style='font-size:20px'>3.2.1) Creating a cross tab matrix between User and Brand_Variety from the testing data</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='font-size:20px'>3.2.1) Creating a crosstab matrix between User and Brand_Variety from the testing data</h1>", unsafe_allow_html=True)
     st.write("")
     code = """new_user_matrix = pd.crosstab(y_test, X_test['Brand_Variety'], X_test['Rating'], aggfunc='mean')
 new_user_matrix.fillna(value=0, inplace=True)
